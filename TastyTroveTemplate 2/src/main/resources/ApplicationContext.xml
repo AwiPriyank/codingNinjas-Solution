@@ -1,0 +1,21 @@
+<!--Don't change the name of this file-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean definition for ingredients -->
+    <!-- Bean id should be the same as class name but in camel-case naming convention -->
+    <!-- Example: Lentils -->
+    <bean id="lentils" class="com.example.TastyTrove.Lentils"/>
+
+    <!-- Bean definition for Recipes -->
+    <!-- Bean id should follow camel case naming convention with the combination of recipe type and ingredient -->
+    <!-- Example: southIndianLentils -->
+    <bean id="southIndianLentils" class="com.example.TastyTrove.SouthIndian">
+        <!-- Setter injection for ingredients -->
+        <property name="ingredients" ref="lentils"/>
+    </bean>
+
+    <!-- Define beans for other combinations similarly -->
+
+</beans>
